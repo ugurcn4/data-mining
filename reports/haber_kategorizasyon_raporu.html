@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Haber Metinleri Kategorizasyonu - Sonuç Raporu</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { color: #2c3e50; text-align: center; }
+        h2 { color: #3498db; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .img-container { text-align: center; margin: 20px 0; }
+        img { max-width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f2f2f2; }
+        .highlight { background-color: #f8f9fa; padding: 15px; border-radius: 5px; }
+        .conclusion { background-color: #e8f4f8; padding: 15px; border-radius: 5px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HABER METİNLERİ KATEGORİZASYONU - SONUÇ RAPORU</h1>
+        
+        <h2>1. Veri Seti Özeti</h2>
+        <p>Bu projede web kazıma yöntemiyle farklı haber sitelerinden toplanan haber metinleri kullanılmıştır.</p>
+        <ul>
+            <li>Toplam haber sayısı: 2015</li>
+            <li>Filtrelenmiş haber sayısı (6 kategori): 1787</li>
+            <li>Kategoriler: Dünya, Ekonomi, Spor, Eğitim, Magazin, Yaşam</li>
+        </ul>
+        
+        <div class="img-container">
+            <img src="kategori_dagilimi.png" alt="Kategori Dağılımı">
+            <p><em>Şekil 1: Kategori Dağılımı</em></p>
+        </div>
+        
+        <div class="img-container">
+            <img src="kaynak_dagilimi.png" alt="Kaynak Dağılımı">
+            <p><em>Şekil 2: Kaynak Bazında Haber Dağılımı</em></p>
+        </div>
+        
+        <h2>2. Metin Özellikleri Analizi</h2>
+        <p>Haber metinlerinin özellikleri incelenmiştir:</p>
+        <ul>
+            <li>Ortalama başlık uzunluğu: 66.06 karakter</li>
+            <li>Ortalama içerik uzunluğu: 1042.46 karakter</li>
+            <li>Ortalama kelime sayısı: 132.69 kelime</li>
+        </ul>
+        
+        <div class="img-container">
+            <img src="kategori_uzunluk.png" alt="Kategori Uzunluk">
+            <p><em>Şekil 3: Kategori Bazında Ortalama İçerik Uzunluğu</em></p>
+        </div>
+        
+        <h2>3. Model Performans Değerlendirmesi</h2>
+        <p>Farklı vektörleştirme yöntemleri ve sınıflandırma algoritmaları kullanılarak performans karşılaştırması yapılmıştır.</p>
+        
+        <div class="img-container">
+            <img src="model_karsilastirma.png" alt="Model Karşılaştırma">
+            <p><em>Şekil 4: Vektörleştirme Yöntemlerine Göre Model Performansları</em></p>
+        </div>
+        
+        <div class="highlight">
+            <h3>En İyi Performans Gösteren Model</h3>
+            <p>Genel olarak en iyi model: Count Naive Bayes (Doğruluk: 85.75%)</p>
+        </div>
+        
+        <h2>4. Model Performans Analizi</h2>
+        
+        <h3>En İyi Model (Count Naive Bayes) Değerlendirmesi</h3>
+        <h4>Avantajları:</h4>
+        <ul>
+            <li>Haber metinleri gibi metin verilerinde yüksek başarı sağlar</li>
+            <li>Özellikle kısa metinlerde (haber başlıkları) etkilidir</li>
+            <li>Eğitim ve tahmin süresi oldukça hızlıdır</li>
+            <li>Basit ama etkili bir algoritma olması</li>
+        </ul>
+        
+        <h4>Dezavantajları:</h4>
+        <ul>
+            <li>Kategoriler arası doğruluk farklılıkları gösterir</li>
+            <li>'Yaşam' kategorisinde düşük recall değeri (0.61)</li>
+            <li>Özellik bağımsızlığı varsayımı gerçek veride tam sağlanamaz</li>
+        </ul>
+        
+        <h3>Kategoriler Arası Performans Değerlendirmesi</h3>
+        <ul>
+            <li>En başarılı kategori: Spor (F1-score: 0.95)</li>
+            <li>En düşük başarılı kategori: Yaşam (F1-score: 0.76)</li>
+            <li>Dünya kategorisinde precision değeri diğerlerine göre daha düşük (0.75)</li>
+        </ul>
+        
+        <h3>Olası İyileştirmeler</h3>
+        <ol>
+            <li>Daha fazla veri toplanması</li>
+            <li>Vektörleştirme parametrelerinin optimizasyonu</li>
+            <li>Word2Vec, Glove gibi ileri düzey kelime temsil yöntemlerinin denenmesi</li>
+            <li>Hibrit model yaklaşımları</li>
+        </ol>
+        
+        <h2>5. Sonuç ve Gelecek Çalışmalar</h2>
+        
+        <div class="conclusion">
+            <h3>Proje Sonuçları:</h3>
+            <ul>
+                <li>Web kazıma yöntemiyle 2015 haber metni elde edildi</li>
+                <li>6 farklı kategori için sınıflandırma yapıldı</li>
+                <li>En iyi model 85.75% doğruluk oranı sağladı</li>
+                <li>Bazı kategorilerde daha yüksek başarı (Spor: %95)</li>
+                <li>Bazı kategorilerde iyileştirme gerekiyor (Yaşam: %76)</li>
+            </ul>
+            
+            <h3>Gelecek Çalışmalar:</h3>
+            <ul>
+                <li>Derin öğrenme modelleri (LSTM, GRU) ile performans karşılaştırması</li>
+                <li>Daha büyük veri seti ile çalışma</li>
+                <li>Türkçe NLP işlemleri için özelleştirilmiş yöntemler</li>
+                <li>Alt kategori sınıflandırması (Örn: Spor kategorisinde futbol, basketbol vb.)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
